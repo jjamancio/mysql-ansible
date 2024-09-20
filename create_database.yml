@@ -1,0 +1,10 @@
+---
+- name: Create a database
+  hosts: node2.lab.example.com
+
+  tasks:
+    - name: Create a new database with name 'bobdata'
+      community.mysql.mysql_db:
+        name: araujo
+        state: present
+        login_unix_socket: /run/mysqld/mysqld.sock
