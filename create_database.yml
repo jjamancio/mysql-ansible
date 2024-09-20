@@ -4,7 +4,7 @@
 
   tasks:
     - name: Create a new database with name 'bobdata'
-      community.mysql.mysql_db:
+      community.mysql:
         name: araujo
         state: present
         login_unix_socket: /run/mysqld/mysqld.sock
