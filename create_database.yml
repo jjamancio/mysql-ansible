@@ -4,7 +4,7 @@
 
   tasks:
     - name: Cria banco de dados 'araujo'
-      mysql_db:
+      community.mysql.mysql_db:
         name: araujo
         state: present
         login_unix_socket: /run/mysqld/mysqld.sock
