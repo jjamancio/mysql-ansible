@@ -1,0 +1,16 @@
+---
+- name: Install mysql server
+  hosts: node2.lab.example.com
+  become: true
+
+  tasks:
+    - name: Install mysql-server
+        dnf:
+          name: mysql-server
+          state: latest
+
+    - name: Start mysql-server service
+        service:
+          name: mysql-server
+          state: started
+          enabled: true
