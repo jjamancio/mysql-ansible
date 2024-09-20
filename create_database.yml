@@ -7,4 +7,3 @@
       community.mysql.mysql_db:
         name: araujo
         state: present
-        login_unix_socket: /run/mysqld/mysqld.sock
