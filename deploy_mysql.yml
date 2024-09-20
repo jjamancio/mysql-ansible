@@ -2,15 +2,19 @@
 - name: Install mysql server
   hosts: node2.lab.example.com
   become: true
+  vars:
+    database: mysql
+    mysql_pkg: mysql-server
+    mysql_svc: mysqld
 
   tasks:
-    - name: Install mysql-server
+    - name: Install {{ database }}-server
       ansible.builtin.dnf:
-        name: mysql-server
+        name: "{{ mysql_pkg }}"
         state: latest
 
-    - name: Start mysql-server service
+    - name: Start {{ database }} service
       ansible.builtin.service:
-        name: mysql-server
+        name: "{{ mysql_svc }}"
         state: started
         enabled: true
